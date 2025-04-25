@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마크 모드 모음</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: white;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            border: 5px solid black;
+        }
+
+        .table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2px;
+            width: 100%;
+        }
+
+        .cell {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #FFEBBB;
+            font-weight: bold;
+            border: 2px solid black;
+            background-color: white;
+            height: 100px; /* 셀의 높이를 고정 */
+        }
+
+        .cell a {
+            text-decoration: none;
+            color: #FFEBBB;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cell a:hover {
+            background-color: #FFD966;
+        }
+
+        .header {
+            grid-column: span 2;
+            font-size: 2rem;
+            height: 120px; /* 헤더 높이 */
+        }
+
+        .vip {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="table">
+            <div class="cell header">마크 모드 모음</div>
+            <div class="cell vip">
+                <a href="#vip">VIP 전용</a>
+            </div>
+            <!-- 반복되는 셀 -->
+            <div class="cell">
+                <a href="../minemod/Worldedit.html">월드에딧</a>
+            </div>
+            <div class="cell">
+                <a href="../minemod/Worldedit.html">건축을 빠르고 쉬운 명령어 하나로</a>
+            </div>
+            <div class="cell">
+                <a href="#mark-mode">마크 모드</a>
+            </div>
+            <div class="cell">
+                <a href="#mode-description">모드 설명</a>
+            </div>
+            <div class="cell">
+                <a href="#mark-mode">마크 모드</a>
+            </div>
+            <div class="cell">
+                <a href="#mode-description">모드 설명</a>
+            </div>
+            <div class="cell">
+                <a href="#mark-mode">마크 모드</a>
+            </div>
+            <div class="cell">
+                <a href="#mark-description">마크 설명</a>
+            </div>
+            <!-- 추가된 긴 내용 -->
+            <div class="cell">
+                <a href="#extra">추가 항목 1</a>
+            </div>
+            <div class="cell">
+                <a href="#extra">추가 항목 2</a>
+            </div>
+            <div class="cell">
+                <a href="#extra">추가 항목 3</a>
+            </div>
+            <div class="cell">
+                <a href="#extra">추가 항목 4</a>
+            </div>
+            <div class="cell">
+                <a href="#extra">추가 항목 5</a>
+            </div>
+            <div class="cell">
+                <a href="#extra">추가 항목 6</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

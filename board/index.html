@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { margin-bottom: 20px; }
+        textarea { width: 100%; height: 100px; }
+        button { margin-top: 10px; padding: 10px 15px; }
+        .post { border: 1px solid #ddd; padding: 10px; margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+    <h1>게시판</h1>
+    <form id="postForm">
+        <label>제목:</label><br>
+        <input type="text" id="title" required><br>
+        <label>내용:</label><br>
+        <textarea id="content" required></textarea><br>
+        <label>작성자:</label><br>
+        <input type="text" id="author" required><br>
+        <button type="button" onclick="addPost()">게시물 추가</button>
+    </form>
+
+    <h2>게시물 목록</h2>
+    <div id="postList"></div>
+
+    <script>
+        async function addPost() {
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+            const author = document.getElementById('author').value;
+
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('content', content);
+            formData.append('author', author);
+
+            const response = await fetch('add_post.php', {
+                method: 'POST',
+                body: formData
+            });
+            const message = await response.text();
+            alert(message);
+            fetchPosts();
+        }
+
+        async function fetchPosts() {
+            const response = await fetch('get_posts.php');
+            const posts = await response.json();
+            const postList = document.getElementById('postList');
+            postList.innerHTML = posts.map(post => `
+                <div class="post">
+                    <h3>${post.title}</h3>
+                    <p>${post.content}</p>
+                    <small>작성자: ${post.author} | 작성일: ${post.created_at}</small>
+                </div>
+            `).join('');
+        }
+
+        // 페이지 로드 시 게시물 목록 가져오기
+        fetchPosts();
+    </script>
+</body>
+</html>
