@@ -1,7 +1,0 @@
-Maria DB 비번 HWy!qwer67 port 3307
-
-phpmyadmin 아이디 root 비번 HWy!qwer67
-
-사용자 (허연우 계정) 사용자명 admin 암호 CWLKvex5laxp_GAS
-
-데이터 베이스명 hyw_DB
